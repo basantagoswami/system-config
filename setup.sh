@@ -27,3 +27,8 @@ nix profile add "$REPO_DIR#default"
 for pkg in "$REPO_DIR/dotfiles"/*/; do
     stow -d "$REPO_DIR/dotfiles" -t ~ "$(basename "$pkg")"
 done
+
+# Install sway session wrapper for GDM
+sudo cp "$REPO_DIR/sway-session" /usr/local/bin/sway-session
+sudo chmod +x /usr/local/bin/sway-session
+sudo cp "$REPO_DIR/sway-nix.desktop" /usr/share/wayland-sessions/sway-nix.desktop

@@ -1,0 +1,58 @@
+/* Catppuccin Mocha */
+/* base: #1e1e2e | mantle: #181825 | crust: #11111b */
+/* text: #cdd6f4 | subtext0: #a6adc8 | overlay0: #6c7086 */
+/* surface0: #313244 | peach: #fab387 */
+
+window {
+  background-color: #1e1e2e;
+  border: 1px solid #313244;
+  border-radius: 8px;
+  font-family: "MesloLGS Nerd Font";
+  font-size: 15px;
+  color: #cdd6f4;
+}
+
+#input {
+  background-color: #181825;
+  color: #cdd6f4;
+  border: 1px solid #313244;
+  border-radius: 6px;
+  padding: 8px 12px;
+  margin: 8px;
+  outline: none;
+}
+
+#input::placeholder {
+  color: #6c7086;
+}
+
+#inner-box {
+  background-color: transparent;
+}
+
+#outer-box {
+  padding: 4px;
+}
+
+#scroll {
+  margin: 0 4px 4px 4px;
+}
+
+#entry {
+  border-radius: 6px;
+  padding: 6px 12px;
+  color: #cdd6f4;
+}
+
+#entry:selected {
+  background-color: #313244;
+  color: #fab387;
+}
+
+#text {
+  color: inherit;
+}
+
+#img {
+  margin-right: 6px;
+}
