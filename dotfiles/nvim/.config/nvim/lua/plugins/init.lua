@@ -3,10 +3,9 @@ return {
     "catppuccin/nvim",
     name = "catppuccin",
     priority = 1000,
-    opts = {
-      flavour = "mocha",
-    },
-    init = function()
+    lazy = false,
+    config = function()
+      require("catppuccin").setup({ flavour = "mocha" })
       vim.cmd("colorscheme catppuccin")
     end,
   },
@@ -23,6 +22,25 @@ return {
     end,
   },
   {
+    "nvim-neo-tree/neo-tree.nvim",
+    branch = "v3.x",
+    lazy = false,
+    dependencies = {
+      "nvim-lua/plenary.nvim",
+      "MunifTanjim/nui.nvim",
+      "nvim-tree/nvim-web-devicons",
+    },
+    config = function()
+      require("neo-tree").setup({
+        filesystem = {
+          filtered_items = {
+            visible = true,
+          },
+        },
+      })
+    end,
+  },
+  {
     "nvim-telescope/telescope.nvim",
     version = "*",
     dependencies = {
@@ -30,7 +48,11 @@ return {
       { "nvim-telescope/telescope-fzf-native.nvim", build = "make" },
     },
     config = function()
-      require("telescope").setup({})
+      require("telescope").setup({
+          defaults = {
+              hidden = true
+          }
+      })
       require("telescope").load_extension("fzf")
 
       local builtin = require("telescope.builtin")

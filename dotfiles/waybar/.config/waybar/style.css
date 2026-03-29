@@ -26,36 +26,32 @@
 @define-color crust #11111b;
 
 * {
-  font-family: "MesloLGS Nerd Font";
-  font-size: 16px;
+  font-family: "JetBrainsMono Nerd Font", "Symbols Nerd Font Mono";
+  font-size: 14px;
   min-height: 0;
-  padding-right: 2px;
-  padding-left: 2px;
-  padding-bottom: 0px;
+  padding: 0 2px;
 }
 
 #waybar {
   background: @base;
   color: @text;
-  margin: 2px 2px;
+  margin: 2px;
 }
 
 #workspaces {
   border-radius: 5px;
-  margin: 5px;
-  background: @crust;
-  margin-left: 2px;
+  margin: 5px 5px 5px 2px;
+  background: @surface2;
 }
 
 #workspaces button {
-  color: @overlay1;
+  color: @rosewater;
   border-radius: 5px;
   padding: 0.4rem;
 }
 
 #workspaces button.active {
   color: @peach;
-  border-radius: 5px;
 }
 
 button {
@@ -63,8 +59,7 @@ button {
 }
 
 #workspaces button:hover {
-  background: @surface0;
-  border: 0px solid transparent;
+  background: @surface1;
 }
 
 #tray,
@@ -73,20 +68,35 @@ button {
 #battery,
 #pulseaudio,
 #network,
+#bluetooth,
 #cpu,
 #memory,
 #temperature,
 #custom-lock,
 #custom-power,
 #custom-uptime {
-  background-color: @crust;
+  background-color: @surface1;
   padding: 0.5rem 1rem;
-  margin: 5px 0;
+  margin: 5px 2px;
+}
+
+#clock,
+#cpu,
+#network,
+#bluetooth,
+#memory,
+#temperature,
+#custom-uptime {
+  border-radius: 5px;
+}
+
+#backlight,
+#battery {
+  border-radius: 0;
 }
 
 #clock {
   color: @yellow;
-  border-radius: 5px;
 }
 
 #battery {
@@ -105,14 +115,9 @@ button {
   color: @yellow;
 }
 
-#backlight,
-#battery {
-  border-radius: 0;
-}
-
 #pulseaudio {
   color: @subtext1;
-  border-radius: 5px 0px 0px 5px;
+  border-radius: 5px 0 0 5px;
 }
 
 #custom-lock {
@@ -121,31 +126,30 @@ button {
 
 #custom-power {
   margin-right: 1rem;
-  border-radius: 0px 5px 5px 0px;
+  border-radius: 0 5px 5px 0;
   color: @red;
 }
 
 #custom-uptime {
   color: @text;
-  border-radius: 5px;
 }
 
 #cpu {
   color: @sapphire;
-  border-radius: 5px;
 }
 
 #network {
   color: @subtext1;
-  border-radius: 5px;
+}
+
+#bluetooth {
+  color: @blue;
 }
 
 #memory {
   color: @teal;
-  border-radius: 5px;
 }
 
 #temperature {
   color: @sky;
-  border-radius: 5px;
 }

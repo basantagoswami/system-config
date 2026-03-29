@@ -37,6 +37,6 @@
 
 ## Fonts
 
-- UI: `MesloLGS Nerd Font`
+- UI: `JetBrainsMono Nerd Font`
 - Icons fallback: `Symbols Nerd Font Mono`
 - Size: 16px

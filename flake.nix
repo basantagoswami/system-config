@@ -21,7 +21,7 @@
           pkgs.stow
           pkgs.waybar
           pkgs.nerd-fonts.symbols-only
-          pkgs.nerd-fonts.meslo-lg
+          pkgs.nerd-fonts.jetbrains-mono
           pkgs.ghostty
           pkgs.neovim
           pkgs.tmux
@@ -36,6 +36,10 @@
           pkgs.zoxide
           pkgs.wofi
           pkgs.tree-sitter
+          pkgs.brightnessctl
+          pkgs.swayidle
+          pkgs.swaynotificationcenter
+          pkgs.bluetuith
         ];
       };
 

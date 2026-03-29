@@ -1,6 +1,9 @@
 #!/bin/bash
 set -e
 
+# Ask for password at the beginning so that everything after this works without having to be prompted for password
+sudo -v
+
 REPO_DIR="$(cd "$(dirname "$0")" && pwd)"
 
 # Install Nix
@@ -13,15 +16,16 @@ else
     echo "Nix already installed, skipping."
 fi
 
-# Install Sway
-sh $REPO_DIR/install-sway.sh
-
 # Copy wallpaper
 mkdir -p ~/.local/share/backgrounds
 cp "$REPO_DIR/assets/background.jpg" ~/.local/share/backgrounds/background.jpg
 
 # Install Nix packages
 nix profile add "$REPO_DIR#default"
+
+# Install packages that can't be installed via Nix for various reasons
+sh $REPO_DIR/install-sway.sh
+sh $REPO_DIR/install-swaylock.sh
 
 # Stow dotfiles
 for pkg in "$REPO_DIR/dotfiles"/*/; do

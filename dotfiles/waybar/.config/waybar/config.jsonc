@@ -16,6 +16,7 @@
     "backlight",
     "battery",
     "network",
+    "bluetooth",
     "tray",
     "custom/lock",
     "custom/power"
@@ -39,7 +40,15 @@
     "format-ethernet": " {bandwidthDownBits}",
     "format-disconnected": " No Network",
     "interval": 5,
-    "tooltip": false
+    "tooltip": false,
+    "on-click": "ghostty -e nmtui"
+  },
+  "bluetooth": {
+    "format": "",
+    "format-connected": "",
+    "format-connected-battery": " {device_battery_percentage}%",
+    "tooltip": false,
+    "on-click": "ghostty -e bluetuith"
   },
   "cpu": {
     "interval": 1,
@@ -67,7 +76,8 @@
         "",
         ""
       ]
-    }
+    },
+    "on-click": "wpctl set-mute @DEFAULT_AUDIO_SINK@ toggle"
   },
   "backlight": {
     "format": "{icon} {percent}%",
@@ -89,10 +99,12 @@
   },
   "custom/lock": {
     "tooltip": false,
-    "format": ""
+    "format": "",
+    "on-click": "swaylock -f"
   },
   "custom/power": {
     "tooltip": false,
-    "format": "⏻"
+    "format": "⏻",
+    "on-click": "swaymsg exit"
   }
 }
