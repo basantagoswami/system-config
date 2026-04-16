@@ -25,7 +25,6 @@
           pkgs.ghostty
           pkgs.neovim
           pkgs.tmux
-          pkgs.podman
           pkgs.p7zip
           pkgs.lazygit
           pkgs.lazydocker
@@ -37,6 +36,7 @@
           pkgs.wofi
           pkgs.tree-sitter
           pkgs.brightnessctl
+          pkgs.wlogout
           pkgs.swayidle
           pkgs.swaynotificationcenter
           pkgs.bluetuith

@@ -6,25 +6,42 @@
     "cpu",
     "memory",
     "temperature",
+    "battery",
     "custom/uptime"
   ],
   "modules-center": [
     "clock"
   ],
   "modules-right": [
+    "wlr/taskbar",
+    "tray",
+    "pulseaudio/slider",
     "pulseaudio",
     "backlight",
-    "battery",
     "network",
     "bluetooth",
-    "tray",
     "custom/lock",
     "custom/power"
   ],
+  "wlr/taskbar": {
+    "format": "{icon}",
+    "all-outputs": true,
+    "tooltip-format": "{name}",
+    "on-click": "activate",
+    "on-click-middle": "close"
+  },
   "sway/workspaces": {
-    "format": "{name}",
+    "format": "{icon}",
+    "format-icons": {
+      "default": "\uf111",
+      "focused": "\ue0b6\ue0b4"
+    },
+    "persistent_workspaces": {
+      "*": 2
+    },
     "disable-scroll": true,
-    "all-outputs": true
+    "all-outputs": true,
+    "show-special": true
   },
   "tray": {
     "icon-size": 16,
@@ -32,49 +49,54 @@
   },
   "clock": {
     "tooltip-format": "<big>{:%Y %B}</big>\n<tt><small>{calendar}</small></tt>",
-    "format": "{:%d/%m/%Y  %I:%M %p}",
+    "format": "{:%d %B %Y  %I:%M %p}",
     "interval": 60
   },
   "network": {
-    "format-wifi": " {bandwidthDownBits}",
-    "format-ethernet": " {bandwidthDownBits}",
-    "format-disconnected": " No Network",
+    "format-wifi": "\uf1eb {bandwidthDownBits}",
+    "format-ethernet": "\uf796 {bandwidthDownBits}",
+    "format-disconnected": "\uf127 No Network",
     "interval": 5,
     "tooltip": false,
     "on-click": "ghostty -e nmtui"
   },
   "bluetooth": {
-    "format": "",
-    "format-connected": "",
-    "format-connected-battery": " {device_battery_percentage}%",
+    "format": "\uf293",
+    "format-connected": "\uf293",
+    "format-connected-battery": "\uf293 {device_battery_percentage}%",
     "tooltip": false,
     "on-click": "ghostty -e bluetuith"
   },
   "cpu": {
     "interval": 1,
-    "format": " {usage:>2}%"
+    "format": "\uf2db {usage:>2}%"
   },
   "memory": {
     "interval": 30,
-    "format": "🐐 {used:0.1f}G"
+    "format": "\udb81\ude1a {used:0.1f}G"
   },
   "temperature": {
     "interval": 10,
-    "format": " {temperatureC}°C"
+    "format": "\uf2c9 {temperatureC}\u00b0C"
   },
   "custom/uptime": {
-    "format": " {}",
+    "format": "\uf017 {}",
     "interval": 60,
     "exec": "uptime -p | sed -E 's/up //' | sed -E 's/ hours?,/h/' | sed -E 's/ minutes?/m/' | sed -E 's/ days?,/d/'"
   },
+  "pulseaudio/slider": {
+    "min": 0,
+    "max": 100,
+    "orientation": "horizontal"
+  },
   "pulseaudio": {
     "format": "{icon} {volume}%",
-    "format-muted": "",
+    "format-muted": "\uf026",
     "format-icons": {
       "default": [
-        "",
-        "",
-        ""
+        "\uf026",
+        "\uf027",
+        "\uf028"
       ]
     },
     "on-click": "wpctl set-mute @DEFAULT_AUDIO_SINK@ toggle"
@@ -82,29 +104,29 @@
   "backlight": {
     "format": "{icon} {percent}%",
     "format-icons": [
-      "",
-      ""
+      "\uf185",
+      "\uf186"
     ]
   },
   "battery": {
     "format": "{icon} {capacity}%",
-    "format-charging": " {capacity}%",
+    "format-charging": "\uf0e7 {capacity}%",
     "format-icons": [
-      "",
-      "",
-      "",
-      "",
-      ""
+      "\uf244",
+      "\uf243",
+      "\uf242",
+      "\uf241",
+      "\uf240"
     ]
   },
   "custom/lock": {
     "tooltip": false,
-    "format": "",
-    "on-click": "swaylock -f"
+    "format": "\uf023",
+    "on-click": "gtklock -d"
   },
   "custom/power": {
     "tooltip": false,
-    "format": "⏻",
-    "on-click": "swaymsg exit"
+    "format": "\u23fb",
+    "on-click": "wlogout -m 400"
   }
 }

@@ -1,0 +1,72 @@
+window {
+  background-color: #1e1e2e;
+  background-image: url("../../.local/share/backgrounds/background.jpg");
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+}
+
+#window-box {
+  padding: 48px;
+  border-radius: 12px;
+  background-color: rgba(30, 30, 46, 0.85);
+  border: 1px solid rgba(180, 190, 254, 0.2);
+  color: #cdd6f4;
+  font-family: "JetBrainsMono Nerd Font";
+}
+
+#clock-label {
+  font-size: 48px;
+  font-weight: bold;
+  color: #cdd6f4;
+  margin-bottom: 4px;
+}
+
+#date-label {
+  font-size: 16px;
+  color: #a6adc8;
+  margin-bottom: 24px;
+}
+
+#input {
+  min-width: 300px;
+  padding: 10px 14px;
+  background-color: #313244;
+  border: 1px solid #b4befe;
+  border-radius: 4px;
+  color: #cdd6f4;
+  caret-color: #cdd6f4;
+  font-family: "JetBrainsMono Nerd Font";
+  font-size: 16px;
+}
+
+#input:focus {
+  border-color: #b4befe;
+  background-color: #363653;
+}
+
+#error-label {
+  color: #f38ba8;
+  font-size: 14px;
+  font-family: "JetBrainsMono Nerd Font";
+}
+
+#message-label {
+  color: #a6e3a1;
+  font-size: 14px;
+  font-family: "JetBrainsMono Nerd Font";
+}
+
+#window-box button {
+  background-color: #313244;
+  background-image: none;
+  color: #cdd6f4;
+  border: 1px solid #b4befe;
+  border-radius: 4px;
+  font-family: "JetBrainsMono Nerd Font";
+}
+
+#window-box button:hover {
+  background-color: #45475a;
+  background-image: none;
+}

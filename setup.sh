@@ -25,7 +25,8 @@ nix profile add "$REPO_DIR#default"
 
 # Install packages that can't be installed via Nix for various reasons
 sh $REPO_DIR/install-sway.sh
-sh $REPO_DIR/install-swaylock.sh
+sh $REPO_DIR/install-gtklock.sh
+sh $REPO_DIR/install-opencode.sh
 
 # Stow dotfiles
 for pkg in "$REPO_DIR/dotfiles"/*/; do

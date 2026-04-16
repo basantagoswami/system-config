@@ -1,2 +1,28 @@
 #!/bin/bash -l
+eval $(gnome-keyring-daemon --start --components=pkcs11,secrets,ssh)
+export GNOME_KEYRING_CONTROL SSH_AUTH_SOCK
+export XDG_CURRENT_DESKTOP=sway:GNOME
+# Catppuccin mocha theme for newt-based TUIs (e.g. nmtui). Must be set here
+# rather than ~/.bashrc so it's inherited by processes launched from waybar.
+export NEWT_COLORS='
+root=white,black
+border=blue,black
+window=white,black
+shadow=black,black
+title=blue,black
+button=black,blue
+actbutton=black,cyan
+checkbox=white,black
+actcheckbox=black,cyan
+entry=white,black
+label=cyan,black
+listbox=white,black
+actlistbox=black,cyan
+sellistbox=black,blue
+actsellistbox=black,cyan
+textbox=white,black
+acttextbox=black,cyan
+helpline=black,cyan
+roottext=white,black
+'
 exec sway

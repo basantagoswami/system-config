@@ -29,7 +29,8 @@
   font-family: "JetBrainsMono Nerd Font", "Symbols Nerd Font Mono";
   font-size: 14px;
   min-height: 0;
-  padding: 0 2px;
+  padding: 0;
+  border: none;
 }
 
 #waybar {
@@ -38,118 +39,134 @@
   margin: 2px;
 }
 
+/* ── Workspaces ── */
 #workspaces {
-  border-radius: 5px;
-  margin: 5px 5px 5px 2px;
   background: @surface2;
+  border-radius: 10px;
+  margin: 6px 4px;
+  padding: 0 4px;
 }
 
 #workspaces button {
-  color: @rosewater;
-  border-radius: 5px;
-  padding: 0.4rem;
-}
-
-#workspaces button.active {
-  color: @peach;
-}
-
-button {
+  color: @overlay1;
   background: transparent;
+  padding: 4px 4px;
+}
+
+#workspaces button.occupied {
+  color: @subtext1;
+}
+
+#workspaces button.focused {
+  color: @peach;
+  font-size: 18px;
 }
 
 #workspaces button:hover {
-  background: @surface1;
-}
-
-#tray,
-#backlight,
-#clock,
-#battery,
-#pulseaudio,
-#network,
-#bluetooth,
-#cpu,
-#memory,
-#temperature,
-#custom-lock,
-#custom-power,
-#custom-uptime {
-  background-color: @surface1;
-  padding: 0.5rem 1rem;
-  margin: 5px 2px;
-}
-
-#clock,
-#cpu,
-#network,
-#bluetooth,
-#memory,
-#temperature,
-#custom-uptime {
-  border-radius: 5px;
-}
-
-#backlight,
-#battery {
-  border-radius: 0;
-}
-
-#clock {
-  color: @yellow;
-}
-
-#battery {
-  color: @subtext1;
-}
-
-#battery.charging {
-  color: @yellow;
-}
-
-#battery.warning:not(.charging) {
-  color: @peach;
-}
-
-#backlight {
-  color: @yellow;
-}
-
-#pulseaudio {
-  color: @subtext1;
-  border-radius: 5px 0 0 5px;
-}
-
-#custom-lock {
-  color: @overlay2;
-}
-
-#custom-power {
-  margin-right: 1rem;
-  border-radius: 0 5px 5px 0;
-  color: @red;
-}
-
-#custom-uptime {
   color: @text;
 }
 
-#cpu {
-  color: @sapphire;
+/* ── Clock (solo pill) ── */
+#clock {
+  background: @lavender;
+  color: @base;
+  border-radius: 10px;
+  padding: 4px 14px;
+  margin: 6px 4px;
 }
 
-#network {
-  color: @subtext1;
+/* ── Left group: cpu | memory | temperature | uptime ── */
+#cpu,
+#memory,
+#temperature,
+#battery,
+#custom-uptime {
+  color: @base;
+  padding: 4px 12px;
+  margin: 6px 0;
 }
 
+#cpu           { background: @blue;     border-radius: 10px 0 0 10px; margin-left: 4px; }
+#memory        { background: @mauve; }
+#temperature   { background: @peach; }
+#battery       { background: @yellow; }
+#custom-uptime { background: @green;    border-radius: 0 10px 10px 0; margin-right: 4px; }
+
+/* ── Taskbar (solo pill) ── */
+#taskbar {
+  background: @surface2;
+  border-radius: 10px;
+  margin: 6px 4px;
+  padding: 0 4px;
+}
+
+#taskbar button {
+  padding: 2px 6px;
+  border-radius: 6px;
+  color: @text;
+}
+
+#taskbar button.active {
+  background: @surface1;
+}
+
+#taskbar button:hover {
+  background: @surface1;
+}
+
+/* ── Tray (transparent, no pill) ── */
+#tray {
+  padding: 4px 8px;
+  margin: 6px 4px;
+  color: @text;
+}
+
+/* ── Right group: slider | audio | backlight | battery | network | bluetooth ── */
+#pulseaudio-slider,
+#pulseaudio,
+#backlight,
+#network,
 #bluetooth {
-  color: @blue;
+  color: @base;
+  padding: 4px 12px;
+  margin: 6px 0;
 }
 
-#memory {
-  color: @teal;
+#pulseaudio-slider { background: @teal; border-radius: 10px 0 0 10px; margin-left: 4px; }
+
+#pulseaudio-slider slider {
+  min-height: 0;
+  min-width: 0;
+  opacity: 0;
+  background-image: none;
+  border: none;
+  box-shadow: none;
 }
 
-#temperature {
-  color: @sky;
+#pulseaudio-slider trough {
+  min-height: 10px;
+  min-width: 80px;
+  border-radius: 5px;
+  background: @surface0;
 }
+
+#pulseaudio-slider highlight {
+  min-width: 10px;
+  border-radius: 5px;
+  background: @base;
+}
+#pulseaudio        { background: @teal; }
+#backlight         { background: @yellow; }
+#network           { background: @sapphire; }
+#bluetooth         { background: @blue;     border-radius: 0 10px 10px 0; margin-right: 4px; }
+
+/* ── Right group: lock | power ── */
+#custom-lock,
+#custom-power {
+  color: @base;
+  padding: 4px 12px;
+  margin: 6px 0;
+}
+
+#custom-lock  { background: @overlay2; border-radius: 10px 0 0 10px; margin-left: 4px; }
+#custom-power { background: @red;      border-radius: 0 10px 10px 0; margin-right: 4px; }
