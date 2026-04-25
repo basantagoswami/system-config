@@ -14,7 +14,7 @@ return {
     lazy = false,
     build = ":TSUpdate",
     config = function()
-      require("nvim-treesitter").install({ "dart", "lua" })
+      require("nvim-treesitter").install({ "dart", "lua", "c" })
       vim.api.nvim_create_autocmd("FileType", {
         pattern = { "dart", "lua" },
         callback = function() vim.treesitter.start() end,

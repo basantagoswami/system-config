@@ -48,9 +48,29 @@
     "spacing": 10
   },
   "clock": {
-    "tooltip-format": "<big>{:%Y %B}</big>\n<tt><small>{calendar}</small></tt>",
     "format": "{:%d %B %Y  %I:%M %p}",
-    "interval": 60
+    "interval": 60,
+    "timezones": ["Asia/Kolkata", "UTC", "America/Toronto"],
+    "timezone-tooltip-format": "<b>{0:%Z}</b>   {0:%a %d %b  %I:%M %p}",
+    "tooltip-format": "<tt>{calendar}</tt>\n\n<b>World Clock</b>\n<tt>{tz_list}</tt>",
+    "calendar": {
+      "mode": "month",
+      "mode-mon-col": 3,
+      "weeks-pos": "right",
+      "on-scroll": 1,
+      "format": {
+        "months":   "<span color='#fab387'><b>{}</b></span>",
+        "days":     "<span color='#cdd6f4'>{}</span>",
+        "weeks":    "<span color='#94e2d5'><i>W{}</i></span>",
+        "weekdays": "<span color='#f9e2af'><b>{}</b></span>",
+        "today":    "<span color='#f38ba8'><b><u>{}</u></b></span>"
+      }
+    },
+    "actions": {
+      "on-click-right": "mode",
+      "on-scroll-up":   "shift_up",
+      "on-scroll-down": "shift_down"
+    }
   },
   "network": {
     "format-wifi": "\uf1eb {bandwidthDownBits}",

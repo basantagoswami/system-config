@@ -75,6 +75,19 @@
   margin: 6px 4px;
 }
 
+tooltip {
+  background: @crust;
+  border: 1px solid @surface1;
+  border-radius: 10px;
+  padding: 12px;
+  font-size: 17px;
+}
+
+tooltip label {
+  color: @text;
+  padding: 4px;
+}
+
 /* ── Left group: cpu | memory | temperature | uptime ── */
 #cpu,
 #memory,

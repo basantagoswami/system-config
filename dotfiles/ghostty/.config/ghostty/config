@@ -1,4 +1,5 @@
 keybind = ctrl+backspace=text:\x17
+shell-integration-features = ssh-terminfo,ssh-env
 
 font-size = 14
 font-family = "JetBrainsMono Nerd Font"
